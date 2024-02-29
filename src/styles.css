@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+@layer reset, primeng;
+
+/* Reset CSS */
+@layer reset {
+    button{
+    }
+}
+:root{
+    --primary-color: #efefef;
+    --secondary-color: #0f1126;
+    --secondary-color-hover: #8c90c3;
+    --tertiary-color: #6bbfea;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.btn{
+    border: none;
+    cursor: pointer;
+}

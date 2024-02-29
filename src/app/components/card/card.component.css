@@ -1,0 +1,63 @@
+.card__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    width: 13.75rem;
+    /* height: 25rem; */
+    padding: .25rem .5rem;
+    border: 1px solid #cdcdcd;
+}
+
+.card-image__content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 98%;
+    cursor: pointer;
+}
+
+.product-img{
+    max-width: 92%;
+    width: 100%;
+}
+
+.free-shipping{
+    background-color: var(--tertiary-color);
+    width: 100%;
+    text-align: center;
+    padding: .25rem;
+    margin-top: .25rem;
+}
+
+.card__content{
+    max-width: 98%;
+    cursor: pointer;
+}
+
+.description-title{
+    font-size: .8rem;
+}
+
+.card__container:hover > .btn-buy{
+    visibility: visible;
+}
+
+.btn-buy{
+    background-color: #19386e;
+    width: 100%;
+    color: #e5e5e5;
+    line-height: 3rem;
+    font-size: 1.25rem;
+    border-radius: .25rem;
+    margin: .5rem 0;
+    visibility: hidden;
+}
+
+.btn-buy:hover{
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    transition: 400ms ease;
+}

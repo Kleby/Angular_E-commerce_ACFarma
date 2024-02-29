@@ -1,0 +1,12 @@
+.header__container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid yellow;
+    height: 4rem;
+}
+
+.header__navbar{
+    flex: 1;
+    height: 100%;
+}

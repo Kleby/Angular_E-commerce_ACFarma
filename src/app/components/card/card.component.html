@@ -1,0 +1,22 @@
+<div class="card__container">
+    <div class="card-image__content">
+        <img [src]="productImgSrc()" alt="Remedio" class="product-img">
+        <span class="free-shipping">
+            <fa-icon [icon]="faTruckFast"></fa-icon>
+            Frete Grátis*
+        </span>
+    </div>
+    <div class="card__content">
+        <div class="card__description">
+            <h4 class="description-title">{{productDescription()}}</h4>
+        </div>
+        <div class="card__price">
+            <small class="price-before">{{productBeforePrice()}}</small>
+            <h3 class="price">{{productPrice()}}</h3>
+        </div>
+        <div class="card__stars">
+
+        </div>
+    </div>
+    <button type="button" class="btn btn-buy">Comprar</button>
+</div>
