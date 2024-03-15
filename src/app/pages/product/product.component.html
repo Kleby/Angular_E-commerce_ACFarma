@@ -1,0 +1,40 @@
+@defer {
+    <form class="product__container">
+        <img [src]="produto?.imgProduto" [alt]="produto?.descricao">
+        <div class="product__content">
+            <h2 class="product__title">{{produto?.descricao}}</h2>
+            <div class="shipping-stock">
+                <app-free-shipping />
+                <p class="product-stock">Quantidades restantes: <span class="stock-highlight">{{produto?.quantidadeEstoque}}</span></p>
+            </div>
+            <div class="product__price-amount">
+                <div class="price__content">
+                    <span class="before-price">{{produto?.precoAnterior | currency:'BRL'}}</span>
+                    <h3 class="current-price">{{produto?.preco | currency:  'BRL'}}</h3>
+                </div>
+                <div class="amount__content">
+                    <button type="button" class="btn-amount" (click)="onHandleDecrease()">-</button>
+                    <span class="current-amount">{{amount}}</span>
+                    <button type="button" class="btn-amount" (click)="onHandleIncrease()">+</button>
+                </div>
+            </div>
+            <div class="product__buy-cart">
+                <div class="buy-favorite">
+                    <app-button-buy class="app-btn-buy" />
+                    <button type="button" (click)="onToggleFavorite()" class="btn-favorite">
+                        @if (isFavorite) {
+                            <fa-icon class="favorite" [icon]="['fas', 'heart']" [ngStyle]="{'color': '#ed1010'}" />
+                        }
+                        @else {
+                            <fa-icon class="favorite" [icon]="['far','heart']" [ngStyle]="{'color': 'var(--secondary-color)'}"></fa-icon>
+                        }
+                    </button>
+                </div>
+                <button type="button" class="cart">
+                    <span>Adicionar ao carinho </span>
+                    <fa-icon [icon]="['fas','cart-shopping']"></fa-icon>
+                </button>
+            </div>
+        </div>
+    </form>
+}
