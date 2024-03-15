@@ -1,6 +1,17 @@
 <header class="header__container">
-    <div class="header__brand">
-        <img src="#" alt="alguma brand" class="brand">
+    <div class="header__content">
+        <div class="header__brand">
+            <img src="#" alt="alguma brand" class="brand">
+        </div>
+        <app-navbar class="header__navbar" InputBagPrice="0,00"/>
     </div>
-    <app-navbar class="header__navbar"/>
+        <div class="header__search">
+            <div class="search__content">
+                <input type="text" class="search-product">
+                <button type="button" class="search-btn">
+                <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
+            </button>
+        </div>
+    </div>
+
 </header>

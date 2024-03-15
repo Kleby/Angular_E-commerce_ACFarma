@@ -6,7 +6,7 @@
 }
 
 .navbar__show-menu{
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     position: relative;
@@ -61,6 +61,11 @@
     color: var(--secondary-color);
     padding: .75rem 1rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    color: var(--secondary-color);
 }
 
 .menu-link:hover{
@@ -77,4 +82,24 @@
     width: 100%;
     position: absolute;
     background-color: var(--secondary-color-hover);
+    bottom: .25rem;
+}
+
+.separator{
+    content: "";
+    height: 60%;
+    width: 1px;
+    background-color: #7773;
+}
+
+.menu-link.actived > .bag-shopping{
+    color: var(--secondary-color);
+}
+
+.bag-shopping{
+    font-size: 1.25rem;
+}
+.bag-price{
+    font-size: .9rem;
+    font-weight: 500;
 }

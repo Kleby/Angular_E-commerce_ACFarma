@@ -1,14 +1,17 @@
 <div class="home__container">
     <section class="home__cards">
+        @for (product of products; track $index) {
+            <app-card
+                [inputId]="product.id"
+                [inputImgSrc]="product.imgProduto"
+                [inputDescription]="product.descricao"
+                [inputBefore]="product.precoAnterior"
+                [inputPrice]="product.preco"
+            />
 
-        <app-card inputImgSrc="/assets/images/imagem Remedio.png"
-            inputDescription="A-Z MULHER MADE IN USA 60 COMPRIMIDOS MULHERES ATIVAS SIDNEY OLIVEIRA"
-            inputBefore="R$ 150,60" inputPrice="R$ 39,20" />
-        <app-card inputImgSrc="/assets/images/imagem Remedio.png"
-            inputDescription="A-Z MULHER MADE IN USA 60 COMPRIMIDOS MULHERES ATIVAS SIDNEY OLIVEIRA"
-            inputBefore="R$ 150,60" inputPrice="R$ 39,20" />
-        <app-card inputImgSrc="/assets/images/imagem Remedio.png"
-            inputDescription="A-Z MULHER MADE IN USA 60 COMPRIMIDOS MULHERES ATIVAS SIDNEY OLIVEIRA"
-            inputBefore="R$ 150,60" inputPrice="R$ 39,20" />
+        }@empty {
+            <h2>Nenhum produto encontrado</h2>
+        }
+
     </section>
 </div>

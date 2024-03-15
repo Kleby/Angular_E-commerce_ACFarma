@@ -7,7 +7,12 @@
     width: 13.75rem;
     /* height: 25rem; */
     padding: .25rem .5rem;
-    border: 1px solid #cdcdcd;
+    border: 1px solid transparent;
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+.card__container:hover{
+    border-color:#8886;
 }
 
 .card-image__content{
@@ -23,15 +28,6 @@
     max-width: 92%;
     width: 100%;
 }
-
-.free-shipping{
-    background-color: var(--tertiary-color);
-    width: 100%;
-    text-align: center;
-    padding: .25rem;
-    margin-top: .25rem;
-}
-
 .card__content{
     max-width: 98%;
     cursor: pointer;
@@ -41,23 +37,15 @@
     font-size: .8rem;
 }
 
-.card__container:hover > .btn-buy{
-    visibility: visible;
-}
-
-.btn-buy{
-    background-color: #19386e;
+.app-free-shipping{
     width: 100%;
-    color: #e5e5e5;
-    line-height: 3rem;
-    font-size: 1.25rem;
-    border-radius: .25rem;
-    margin: .5rem 0;
-    visibility: hidden;
 }
 
-.btn-buy:hover{
-    background-color: var(--tertiary-color);
-    color: var(--secondary-color);
-    transition: 400ms ease;
+.app-btn-buy{
+    visibility: hidden;
+    width: 100%;
+}
+.card__container:hover > .app-btn-buy{
+    transition: 400ms ease-in;
+    visibility: visible;
 }
