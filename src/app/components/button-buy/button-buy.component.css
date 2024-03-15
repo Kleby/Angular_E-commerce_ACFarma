@@ -1,0 +1,14 @@
+.btn-buy{
+    background-color: #19386e;
+    width: 100%;
+    color: #e5e5e5;
+    line-height: 3rem;
+    font-size: 1.25rem;
+    border-radius: .25rem;
+}
+
+.btn-buy:hover{
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
+    transition: 400ms ease;
+}
