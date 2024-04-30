@@ -1,0 +1,33 @@
+<div class="cart-card__container">
+    <div class="cart-card__itens cart-card__img-title">
+        <img [src]="product()['imgProduct']" alt="remedio" class="cart-card__product-img">
+        <p class="cart-card__product-title">{{product()['description']}}
+        </p>
+    </div>
+    <div class="cart-card__itens">
+        <p class="cart-card__price"> {{product()['price'] | currency: 'BRL'}}</p>
+    </div>
+    <div class="cart-card__itens">
+        <app-product-quantity (quantityOuput)="onToggleValue($event)" [inputId]="product()['id']"/>
+    </div>
+    <div>
+        <button 
+            id="BtnDelete" 
+            type="button" 
+            class="card_product-btn-delete"
+            (click)="openMessage()"
+        >
+            <fa-icon [icon]="trashIcon" class="cart-card__icon"></fa-icon>
+            <label class="btn-text" for="BtnDelete">Excluir</label>
+        </button>
+    </div>
+</div>
+<i class="line"></i>
+
+@if (isOpenDialog) {
+    <app-message-delete 
+        [inputItemTitle]="product()['description']" 
+        (closeMessage)="onCloseMessage($event)"
+        (isDeleteMessage)="onToggleDelete(product()['id'])" 
+    />
+}
