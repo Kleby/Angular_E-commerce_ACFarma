@@ -3,16 +3,23 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductComponent } from './pages/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
     {
-        path: '',   component: HomeComponent, pathMatch: 'full', title: "Farmacia do Devedor - Home"
+        path: '',   redirectTo: 'product', pathMatch: 'full', 
     },
     {
         path: 'cart', component: CartComponent, title: 'Carrinho de compras'
     },
     {
-        path: `:id`, component: ProductComponent, title: 'Produtos '
+        path: 'product', component: HomeComponent, title: "Farmacia do Devedor - Home"
+    },
+    {
+        path: `product/:id`, component: ProductComponent, title: 'Produtos '
+    },
+    {
+        path: 'contact', component: ContactComponent, title: "Nosso Contatos"
     },
     {
         path: '**', component: NotFoundComponent, title: "Página não encontrada"

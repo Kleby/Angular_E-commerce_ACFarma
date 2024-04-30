@@ -1,0 +1,9 @@
+@media screen and (max-width: 678px) {
+    .product__container{
+        padding: .5rem 1rem;
+        flex-direction: column;
+    }
+    .product__image{
+        min-width: auto;
+    }
+}

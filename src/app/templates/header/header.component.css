@@ -1,7 +1,9 @@
 .header__container{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    margin-bottom: .5rem;
+    background-color: var(--primary-color);
+    padding: 0 1rem ;
 }
 
 .header__content{
@@ -11,41 +13,22 @@
     height: 3.5rem;
 }
 
+.header__brand{
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.brand{
+    width: 100%;
+    height: 100%;
+}
+
 .header__navbar{
     flex: 1;
     height: 100%;
 }
 
-.header__search{
-    flex: 1;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-height: 42px;
-    /* padding-right: 2rem; */
-}
 
-.search__content{
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.search-product{
-    max-width: 100%;
-    width: 100%;
-    padding: .5rem 2rem;
-    font-size: 1rem;
-}
-.search-btn{
-    position: absolute;
-    left: 0;
-    height: 42px;
-    width: 42px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-}

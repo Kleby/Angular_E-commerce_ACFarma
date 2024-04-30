@@ -1,17 +1,8 @@
 <header class="header__container">
     <div class="header__content">
-        <div class="header__brand">
-            <img src="#" alt="alguma brand" class="brand">
-        </div>
-        <app-navbar class="header__navbar" InputBagPrice="0,00"/>
+        <a routerLink="/product" class="header__brand">
+            <img src="/assets/brand/android-chrome-512x512.png" alt="logo da ACFarma" class="brand">
+        </a>
+        <app-navbar class="header__navbar" />
     </div>
-        <div class="header__search">
-            <div class="search__content">
-                <input type="text" class="search-product">
-                <button type="button" class="search-btn">
-                <fa-icon [icon]="searchIcon" class="search-icon"></fa-icon>
-            </button>
-        </div>
-    </div>
-
 </header>

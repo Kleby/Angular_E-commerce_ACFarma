@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '../../services/product.service';
 import { IPorduct } from '../../models/IPoduct.interface';
 import { FreeShippingComponent } from '../../components/free-shipping/free-shipping.component';
-import { ButtonBuyComponent } from '../../components/button-buy/button-buy.component';
 
 import {
   FontAwesomeModule,
@@ -14,28 +13,46 @@ import {
   faCartShopping as fasCart,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as farHeart } from '@fortawesome/free-regular-svg-icons';
+
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ProductCartService } from '../../services/product-cart.service';
+import { ButtonActionComponent } from '../../components/button-action/button-action.component';
+import { ProductQuantityComponent } from '../../components/product-quantity/product-quantity.component';
+import { QuantityCartService } from '../../services/quantity-cart.service';
+import { MessageAddComponent } from '../../components/message-add/message-add.component';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [FreeShippingComponent, ButtonBuyComponent, FontAwesomeModule, CommonModule],
+  imports: [
+    FreeShippingComponent,
+    ButtonActionComponent,
+    FontAwesomeModule,
+    CommonModule,
+    MatSlideToggleModule,
+    ProductQuantityComponent,
+    MessageAddComponent
+  ],
   templateUrl: './product.component.html',
-  styleUrl: './product.component.css',
+  styleUrls: ['./product.component.css', './product.responsive.component.css'],
 })
 export class ProductComponent implements OnInit {
   public produto!: IPorduct | undefined;
   id: string | null = null;
-  amount:number = 1;
+  amount: number = 1;
   isFavorite: boolean = false;
   productForm!: FormGroup;
+  showMessage: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private produtoService: ProductService,
     private faIcons: FaIconLibrary,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private productCartService: ProductCartService,
+    private quantityCartService: QuantityCartService
   ) {}
 
   ngOnInit(): void {
@@ -44,27 +61,43 @@ export class ProductComponent implements OnInit {
     this.getProduto();
 
     this.productForm = this.fb.group({
-      amout: 1,
+      quantity: 1,
       price: 0,
       favorite: false,
-      addCart: false
-    })
+      addCart: false,
+    });
   }
 
   getProduto() {
-    if (this.id) {
-      this.produto = this.produtoService.getProduct(parseInt(this.id));
-    }
-  }
-  
-  onHandleIncrease(): void{
-    this.amount++;
-  }
-  onHandleDecrease(): void{
-    this.amount = this.amount > 1 ? --this.amount: 1;
+      this.produto = this.produtoService.getProduct(Number(this.id));
   }
 
-  onToggleFavorite():void{
+  onToggleValue(value:number){
+      // console.log(value);
+    
+  }
+
+  onToggleFavorite(): void {
     this.isFavorite = !this.isFavorite;
   }
+
+  addToCart(){
+    const product = {
+      ...this.produto!,
+      quantityProducts: this.productCartService.getQuantityProducts(this.produto!.id)
+    }    
+    this.productCartService?.setProductCart(product);
+    this.updatedProductInCart();
+    this.showMessage = true;
+  }
+  
+  onShowMessage(isShowMessage: boolean){
+    this.showMessage = isShowMessage;
+  }
+
+  updatedProductInCart(){
+    this.quantityCartService.updatedQuantityInCart();
+    this.productCartService.updatedPriceTotal();
+  }
+
 }

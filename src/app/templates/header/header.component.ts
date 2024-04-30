@@ -1,33 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component,OnInit } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { MenubarModule } from 'primeng/menubar';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { RouterLink } from '@angular/router';
 
-import { MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [NavbarComponent, MenubarModule, FontAwesomeModule],
+  imports: [NavbarComponent, MenubarModule, RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css', './header.responsive.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent implements OnInit {
-  items!: MenuItem[];
-
-  searchIcon = faMagnifyingGlass
+export class HeaderComponent implements OnInit{
+  totalPriceInCart: number = 0;
 
   ngOnInit(): void {
-    this.items = [
-      {
-        label: 'Home',
-        icon: 'pi pi-fw pi-home'
-      },
-      {
-        label: 'Carrinho',
-        icon: 'pi pi-fw pi-shopping-cart'
-      },
-    ];
   }
 }

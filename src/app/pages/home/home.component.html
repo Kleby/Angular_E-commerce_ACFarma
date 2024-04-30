@@ -1,16 +1,55 @@
 <div class="home__container">
+    <section class="category__container" (change)="setCategory($event)">
+        <div class="category__group">
+            <input type="radio" name="category" class="category-radio" id="personalHygiene" value="personalHygiene">
+            <label class="category-text" for="personalHygiene">Higiene Pessoal</label>
+        </div>
+        <div class="category__group">
+            <input type="radio" name="category" class="category-radio" id="baby" value="baby">
+            <label class="category-text" for="baby">Bebê</label>
+        </div>
+        <div class="category__group">
+            <input type="radio" name="category" class="category-radio" id="health" value="health">
+            <label class="category-text" for="health">Saúde</label>
+        </div>
+    </section>
+    <section class="homer__search">
+        <div class="search__content">
+            <button type="button" class="search-btn">
+                <fa-icon [icon]="searchIcon" class="search-icon">
+                </fa-icon>
+            </button>
+            <input type="text" class="search-product" (input)="onSearchProduct($event)">
+            @if(!searchProduct){
+            <p class="text-placeholder"></p>
+            }
+        </div>
+
+    </section>
     <section class="home__cards">
         @for (product of products; track $index) {
-            <app-card
-                [inputId]="product.id"
-                [inputImgSrc]="product.imgProduto"
-                [inputDescription]="product.descricao"
-                [inputBefore]="product.precoAnterior"
-                [inputPrice]="product.preco"
-            />
-
+            @if(category){
+                @if( product.category === category){
+                    <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
+                    [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
+                    class="cards__card" />
+                }
+            }
+            @else if(searchProduct){
+                @if(productIsContains(product.description)){
+                    <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
+                        [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
+                        class="cards__card" />
+                }
+            }
+            @else {
+            <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
+                [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
+                class="cards__card" />
+            }
+            
         }@empty {
-            <h2>Nenhum produto encontrado</h2>
+        <h2>Nenhum produto encontrado</h2>
         }
 
     </section>

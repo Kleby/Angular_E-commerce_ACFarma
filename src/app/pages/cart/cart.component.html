@@ -1,2 +1,63 @@
-<p>cart works!</p>
-<h1>OLa carrinho</h1>
+<div class="cart__container">
+    <div class="cart__products-finally">
+        <div class="cart__title-content">
+            <h2 class="cart__title">Cesta de compras</h2>
+        </div>
+        <div class="cart__buy-product">
+            <app-button-action inputBtnActionTitle="Finalizar compra" class="app-btn-action buy-item" />
+        </div>
+    </div>
+    <ul class="cart__content">
+        <li class="cart__content-header">
+            <h4 class="description__row-itens">
+                Produto
+            </h4>
+        </li>
+        <li class="cart__content-header">
+            <h4 class="cart__content-itens">
+                Preço Unit.
+            </h4>
+        </li>
+        <li class="cart__content-header">
+            <h4 class="cart__content-itens">
+                Quantidade
+            </h4>
+        </li>
+        <li class="cart__content-header">
+            <h4 class="cart__content-itens">
+                Ação
+            </h4>
+        </li>
+    </ul>
+    <ul class="cart__product-container">
+        @for (product of products; track $index) {
+        <li>
+            <app-cart-card 
+                (quantityProductEmit)="getQuantity($event, product['id'])"
+                (onChangeDeleteEmit)="getCart()"
+                [inputProduct]="product" 
+            />
+        </li>
+        }@empty {
+        <h2>Nenhum produto Adicionado ao carrinho</h2>
+        }
+    </ul>
+    <div class="basket-shooping-icon">
+        <span>Quantidade de itens: </span>
+        <div class="icon_quantity">
+            <span class="bag-quantity">{{quantity()}}</span>
+            <fa-icon [icon]="icons.basketShooping" class="bag-icon" />
+        </div>
+    </div>
+
+    <div class="cart__total-buy">
+        <div class="cart__price-total">
+            <p>
+                Total:
+                <!-- <fa-icon [icon]="icons.dollar" /> -->
+            </p>
+            <p>{{priceTotal() | currency: 'BRL'}}</p>
+        </div>
+        <app-button-action inputBtnActionTitle="Finalizar Compra" class="btn-action-cart" />
+    </div>
+</div>
