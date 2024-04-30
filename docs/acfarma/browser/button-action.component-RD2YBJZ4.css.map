@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/button-action/button-action.component.css"],
+  "sourcesContent": [".btn-action{\r\n    background-color: var(--secondary-color);\r\n    width: 100%;\r\n    color: #e5e5e5;\r\n    height: 100%;\r\n    font-size: 100%;\r\n    text-transform: uppercase;\r\n    border-radius: .25rem;\r\n    box-shadow: 0 2px 3px var(--secondary-dark);\r\n    padding: .5rem 2.25rem;\r\n}\r\n\r\n.btn-action:hover{\r\n    transition: 400ms ease;\r\n    background-color: var(--secondary-dark);\r\n    box-shadow: 0 5px 6px var(--secondary-dark);\r\n    \r\n}"],
+  "mappings": "AAAA,CAAC,WACG,iBAAkB,IAAI,mBACtB,MAAO,KACP,MAAO,QACP,OAAQ,KACR,UAAW,KACX,eAAgB,UANpB,cAOmB,OACf,WAAY,EAAE,IAAI,IAAI,IAAI,kBAR9B,QASa,MAAM,OACnB,CAEA,CAZC,UAYU,OACP,WAAY,IAAM,KAClB,iBAAkB,IAAI,kBACtB,WAAY,EAAE,IAAI,IAAI,IAAI,iBAE9B",
+  "names": []
+}

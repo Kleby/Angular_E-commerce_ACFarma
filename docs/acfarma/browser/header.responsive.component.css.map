@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/templates/header/header.responsive.component.css"],
-  "sourcesContent": ["@media screen and (max-width: 678px) {\r\n    .header__container{\r\n        padding: 0 ;\r\n        margin: 0;\r\n    }\r\n    .brand{\r\n        min-width: 90px;\r\n    }\r\n}"],
-  "mappings": ";AAAA,OAAO,OAAO,IAAI,CAAC,SAAS,EAAE;AAC1B,GAAC;AACG,aAAS;AACT,YAAQ;AACZ;AACA,GAAC;AACG,eAAW;AACf;AACJ;",
-  "names": []
-}

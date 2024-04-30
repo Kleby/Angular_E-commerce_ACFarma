@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/app/templates/header/header.component.css"],
-  "sourcesContent": [".header__container{\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-bottom: .5rem;\r\n    background-color: var(--primary-color);\r\n    padding: 0 1rem ;\r\n}\r\n\r\n.header__content{\r\n    display: flex;\r\n    /* align-items: center; */\r\n    justify-content: space-between;\r\n    height: 3.5rem;\r\n}\r\n\r\n.header__brand{\r\n    max-width: 100%;\r\n    max-height: 100%;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n}\r\n.brand{\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.header__navbar{\r\n    flex: 1;\r\n    height: 100%;\r\n}\r\n\r\n\r\n\r\n"],
-  "mappings": ";AAAA,CAAC;AACG,WAAS;AACT,kBAAgB;AAChB,iBAAe;AACf,oBAAkB,IAAI;AACtB,WAAS,EAAE;AACf;AAEA,CAAC;AACG,WAAS;AAET,mBAAiB;AACjB,UAAQ;AACZ;AAEA,CAAC;AACG,aAAW;AACX,cAAY;AACZ,WAAS;AACT,eAAa;AACb,mBAAiB;AACrB;AACA,CAAC;AACG,SAAO;AACP,UAAQ;AACZ;AAEA,CAAC;AACG,QAAM;AACN,UAAQ;AACZ;",
-  "names": []
-}

@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["src/styles.css"],
-  "sourcesContent": ["@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');\r\n\r\n:root{\r\n    --primary-color: #efefef;\r\n    --primary-color-height: #f9f9f9;\r\n    --secondary-color: #31b07b;\r\n    --secondary-dark: #145439;\r\n    --secondary-color-hover: #548671;\r\n    --tertiary-color: #49bc73;\r\n    --low-color: #c1b8ac;\r\n    --hight-color: #1e9053;\r\n    --text-color: #252525;\r\n}\r\n\r\n* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    font-family: \"Lato\", sans-serif;\r\n}\r\n\r\nbody{\r\n    background-color: var(--primary-color);\r\n    min-height: 100vh;\r\n}\r\n\r\na{\r\n    text-decoration: none;\r\n}\r\n\r\n.btn{\r\n    border: none;\r\n    cursor: pointer;\r\n    user-select: none;\r\n}\r\n"],
-  "mappings": ";;;AAEA;AACI,mBAAiB;AACjB,0BAAwB;AACxB,qBAAmB;AACnB,oBAAkB;AAClB,2BAAyB;AACzB,oBAAkB;AAClB,eAAa;AACb,iBAAe;AACf,gBAAc;AAClB;AAEA;AACI,UAAQ;AACR,WAAS;AACT,cAAY;AACZ,eAAa,MAAM,EAAE;AACzB;AAEA;AACI,oBAAkB,IAAI;AACtB,cAAY;AAChB;AAEA;AACI,mBAAiB;AACrB;AAEA,CAAC;AACG,UAAQ;AACR,UAAQ;AACR,uBAAa;AAAb,eAAa;AACjB;",
-  "names": []
-}

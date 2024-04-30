@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.component.css"],
+  "sourcesContent": ["main{\r\n    background-color: var(--primary-color-height);\r\n}"],
+  "mappings": "AAAA,KACI,iBAAkB,IAAI,uBAC1B",
+  "names": []
+}
