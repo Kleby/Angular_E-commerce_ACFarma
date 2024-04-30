@@ -6,6 +6,7 @@ import { QuantityCartService } from '../../services/quantity-cart.service';
 import { ProductCartService } from '../../services/product-cart.service';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -25,13 +26,25 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     constructor(
       private productService: ProductService,
       private productCartService: ProductCartService,
-      private quantityCartService:QuantityCartService
+      private quantityCartService:QuantityCartService,
+      private route: ActivatedRoute
     ){}
 
     ngOnInit(){
-      this.getAllProducts();
+      const products = this.productService.getAllProducts();
+      this.route.queryParamMap.subscribe(params =>{
+        const description = params.get("description")?.toLocaleLowerCase();
+        if(description){          
+          this.products = products.filter( p => p.description.toLowerCase().includes(description));
+          return;
+        }
+        
+        this.getAllProducts();
+        // this.products = products;
+      })
       this.productCartService.updatedPriceTotal();
-      this.quantityCartService.getTotalInCart()
+      this.quantityCartService.getTotalInCart();
+
     }
 
     private getAllProducts():void{

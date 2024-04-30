@@ -14,16 +14,16 @@
         </div>
     </section>
     <section class="homer__search">
-        <div class="search__content">
-            <button type="button" class="search-btn">
+        <form class="search__content">
+            <button type="submit" class="search-btn">
                 <fa-icon [icon]="searchIcon" class="search-icon">
                 </fa-icon>
             </button>
-            <input type="text" class="search-product" (input)="onSearchProduct($event)">
+            <input type="text" class="search-product" name="description" (input)="onSearchProduct($event)">
             @if(!searchProduct){
             <p class="text-placeholder"></p>
             }
-        </div>
+        </form>
 
     </section>
     <section class="home__cards">
@@ -33,13 +33,6 @@
                     <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
                     [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
                     class="cards__card" />
-                }
-            }
-            @else if(searchProduct){
-                @if(productIsContains(product.description)){
-                    <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
-                        [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
-                        class="cards__card" />
                 }
             }
             @else {
