@@ -14,9 +14,9 @@ export class ProductCartService {
 
   getCart(): IProductCart[] {
     //armazenar na local store
-    if (localStorage.getItem('cart')) {
-      this.itens = JSON.parse(localStorage.getItem('cart') ?? '');
-    }
+    // if (localStorage.getItem('cart')) {
+    //   this.itens = JSON.parse(localStorage.getItem('cart') ?? '');
+    // }
     this.updatedPriceTotal();
     return this.itens;
   }
@@ -29,7 +29,7 @@ export class ProductCartService {
     if(index > -1) this.itens[index].quantityProducts += 1
     else this.itens.push(product);
     //adicionar ao cart do local store como string
-    localStorage.setItem('cart', JSON.stringify(this.itens));
+    // localStorage.setItem('cart', JSON.stringify(this.itens));
   }
 
   getQuantityProducts(id: number): number{
@@ -45,7 +45,7 @@ export class ProductCartService {
       }
     }
     this.updatedPriceTotal();
-    localStorage.setItem('cart', JSON.stringify(this.itens));
+    // localStorage.setItem('cart', JSON.stringify(this.itens));
   }
 
   updatedPriceTotal(){
