@@ -14,9 +14,11 @@ export class ProductCartService {
 
   getCart(): IProductCart[] {
     //armazenar na local store
-    if (localStorage.getItem('cart')) {
-      this.itens = JSON.parse(localStorage.getItem('cart') ?? '');
+    const cartItems = localStorage.getItem('cart');
+    if(!cartItems){
+      return [];
     }
+    this.itens = JSON.parse(cartItems);
     this.updatedPriceTotal();
     return this.itens;
   }

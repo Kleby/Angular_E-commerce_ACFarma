@@ -12,8 +12,13 @@ export class QuantityCartService {
   }
 
   updatedQuantityInCart(): void {
-    this.itens = JSON.parse(localStorage.getItem('cart') || '');
-    
+    const cartItems = localStorage.getItem('cart');
+    if(!cartItems){
+      console.log("não há itens no carrinho");
+      return;
+    }
+
+    this.itens = JSON.parse(cartItems);
     let quantityInCart = 0;
     this.itens.map((item) => {
       quantityInCart += item.quantityProducts;      
