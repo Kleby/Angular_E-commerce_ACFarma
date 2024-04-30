@@ -85,7 +85,7 @@ export class ProductComponent implements OnInit {
     const product = {
       ...this.produto!,
       quantityProducts: this.productCartService.getQuantityProducts(this.produto!.id)
-    }    
+    }        
     this.productCartService?.setProductCart(product);
     this.updatedProductInCart();
     this.showMessage = true;

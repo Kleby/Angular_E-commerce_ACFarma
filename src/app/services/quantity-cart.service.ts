@@ -12,7 +12,8 @@ export class QuantityCartService {
   }
 
   updatedQuantityInCart(): void {
-    // this.itens = JSON.parse(localStorage.getItem('cart') || '');
+    this.itens = JSON.parse(localStorage.getItem('cart') || '');
+    
     let quantityInCart = 0;
     this.itens.map((item) => {
       quantityInCart += item.quantityProducts;      
@@ -34,9 +35,9 @@ export class QuantityCartService {
   }
 
   deleteProductInCart(id: number){
-    // this.itens = JSON.parse(localStorage.getItem('cart') || '');  
+    this.itens = JSON.parse(localStorage.getItem('cart') || '');  
     this.itens = this.itens.filter(item => item.id !== id)  
-    // localStorage.setItem('cart', JSON.stringify(this.itens));
+    localStorage.setItem('cart', JSON.stringify(this.itens));
     this.updatedQuantityInCart();
   }
 }
