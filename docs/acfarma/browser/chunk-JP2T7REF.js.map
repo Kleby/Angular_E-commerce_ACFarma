@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/button-action/button-action.component.ts", "src/app/components/button-action/button-action.component.html"],
+  "sourcesContent": ["import { Component, Input, signal } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-button-action',\r\n  standalone: true,\r\n  imports: [],\r\n  templateUrl: './button-action.component.html',\r\n  styleUrl: './button-action.component.css'\r\n})\r\nexport class ButtonActionComponent {\r\n  public btnActionTitle = signal('')\r\n\r\n  @Input() set inputBtnActionTitle(title: string){\r\n    this.btnActionTitle.set(title);\r\n  } \r\n}\r\n", "<button type=\"button\" class=\"btn btn-action\">{{btnActionTitle()}}</button>"],
+  "mappings": ";;;;;;;;;;;;;AASM,IAAO,yBAAP,MAAO,uBAAqB;EAPlC,cAAA;AAQS,SAAA,iBAAiB,OAAO,EAAE;;EAEjC,IAAa,oBAAoB,OAAa;AAC5C,SAAK,eAAe,IAAI,KAAK;EAC/B;;;mBALW,wBAAqB;AAAA;uFAArB,wBAAqB,WAAA,CAAA,CAAA,mBAAA,CAAA,GAAA,QAAA,EAAA,qBAAA,sBAAA,GAAA,YAAA,MAAA,UAAA,CAAA,6BAAA,GAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,QAAA,UAAA,GAAA,OAAA,YAAA,CAAA,GAAA,UAAA,SAAA,+BAAA,IAAA,KAAA;AAAA,MAAA,KAAA,GAAA;ACTlC,IAAA,yBAAA,GAAA,UAAA,CAAA;AAA6C,IAAA,iBAAA,CAAA;AAAoB,IAAA,uBAAA;;;AAApB,IAAA,oBAAA;AAAA,IAAA,4BAAA,IAAA,eAAA,CAAA;;;ADSvC,IAAO,wBAAP;;6EAAO,uBAAqB,EAAA,WAAA,yBAAA,UAAA,mEAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}

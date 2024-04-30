@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "farmacia-devedor": {
+    "acfarma": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "docs",
+            "outputPath": "docs/acfarma",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -43,6 +43,7 @@
                   "maximumError": "4kb"
                 }
               ],
+              "sourceMap": true,
               "outputHashing": "all"
             },
             "development": {
@@ -57,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "farmacia-devedor:build:production"
+              "buildTarget": "acfarma:build:production"
             },
             "development": {
-              "buildTarget": "farmacia-devedor:build:development"
+              "buildTarget": "acfarma:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "farmacia-devedor:build"
+            "buildTarget": "acfarma:build"
           }
         },
         "test": {

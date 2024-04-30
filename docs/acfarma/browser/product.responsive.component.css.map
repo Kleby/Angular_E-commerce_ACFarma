@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/product/product.responsive.component.css"],
+  "sourcesContent": ["@media screen and (max-width: 678px) {\r\n    .product__container{\r\n        padding: .5rem 1rem;\r\n        flex-direction: column;\r\n    }\r\n    .product__image{\r\n        min-width: auto;\r\n    }\r\n}"],
+  "mappings": ";AAAA,OAAO,OAAO,IAAI,CAAC,SAAS,EAAE;AAC1B,GAAC;AACG,aAAS,MAAM;AACf,oBAAgB;AACpB;AACA,GAAC;AACG,eAAW;AACf;AACJ;",
+  "names": []
+}

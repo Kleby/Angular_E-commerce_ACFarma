@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/free-shipping/free-shipping.component.ts", "src/app/components/free-shipping/free-shipping.component.html"],
+  "sourcesContent": ["import { Component } from '@angular/core';\r\nimport { faTruckFast } from '@fortawesome/free-solid-svg-icons';\r\nimport { FontAwesomeModule } from '@fortawesome/angular-fontawesome';\r\n\r\n\r\n\r\n@Component({\r\n  selector: 'app-free-shipping',\r\n  standalone: true,\r\n  imports: [FontAwesomeModule],\r\n  templateUrl: './free-shipping.component.html',\r\n  styleUrl: './free-shipping.component.css'\r\n})\r\nexport class FreeShippingComponent {\r\n  truckIcon = faTruckFast;\r\n}\r\n", "<div class=\"free-shipping\">\r\n    <fa-icon [icon]=\"truckIcon\" class=\"truck-icon\"></fa-icon>\r\n    Frete Grátis*\r\n</div>"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;AAaM,IAAO,yBAAP,MAAO,uBAAqB;EAPlC,cAAA;AAQE,SAAA,YAAY;;;;mBADD,wBAAqB;AAAA;uFAArB,wBAAqB,WAAA,CAAA,CAAA,mBAAA,CAAA,GAAA,YAAA,MAAA,UAAA,CAAA,6BAAA,GAAA,OAAA,GAAA,MAAA,GAAA,QAAA,CAAA,CAAA,GAAA,eAAA,GAAA,CAAA,GAAA,cAAA,GAAA,MAAA,CAAA,GAAA,UAAA,SAAA,+BAAA,IAAA,KAAA;AAAA,MAAA,KAAA,GAAA;ACblC,IAAA,yBAAA,GAAA,OAAA,CAAA;AACI,IAAA,oBAAA,GAAA,WAAA,CAAA;AACA,IAAA,iBAAA,GAAA,qBAAA;AACJ,IAAA,uBAAA;;;AAFa,IAAA,oBAAA;AAAA,IAAA,qBAAA,QAAA,IAAA,SAAA;;kBDQD,mBAAiB,eAAA,GAAA,QAAA,CAAA,6ZAAA,EAAA,CAAA;AAIvB,IAAO,wBAAP;;6EAAO,uBAAqB,EAAA,WAAA,yBAAA,UAAA,mEAAA,YAAA,GAAA,CAAA;AAAA,GAAA;",
+  "names": []
+}
