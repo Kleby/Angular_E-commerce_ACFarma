@@ -1,8 +1,10 @@
 export interface IPorduct{
     id: number,
-    imgProduto: string,
-    descricao: string,
-    quantidadeEstoque: number,
-    preco: number,
-    precoAnterior: number
+    imgProduct: string,
+    description: string,
+    quantityInStock: number,
+    price: number,
+    priceBefore: number,
+    category: string,
+    isSale: boolean
 }
