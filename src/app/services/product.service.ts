@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { IPorduct } from '../models/IPoduct.interface';
-import { fakerDbProducts } from '../fakerDB';
+import { fakerDbProducts } from '../../assets/db/fakerDB';
 
 @Injectable({
   providedIn: 'root',
