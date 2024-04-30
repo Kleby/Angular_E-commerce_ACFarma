@@ -1,0 +1,13 @@
+@if(showMessage){
+<dialog class="message__container">
+    <div class="message__content">
+        <h4 class="message__text">
+            <span class="message__title">{{title()}}</span>
+            @if(description()){
+            {{description()}}
+            }
+        </h4>
+        <span class="progress-bar"></span>
+    </div>
+</dialog>
+}

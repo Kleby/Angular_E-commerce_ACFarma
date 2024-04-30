@@ -1,0 +1,64 @@
+.message__container{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #262443c6;
+    z-index: 4;
+}
+
+.message__content{
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.25rem;
+    width: 600px;
+    background-color: var(--primary-color-height);
+    height: 200px;
+    border-radius: .5rem;
+    position: relative;
+}
+
+
+.message__text{
+    color: var(--hight-color);
+    padding: 1rem;
+    font-weight: 600;
+}
+
+.message__title{
+    color: var(--text-color);
+    font-weight: 600;
+
+}
+
+.progress-bar{
+    animation: showMessage 4000ms ease-in-out 100ms forwards;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    display: block;
+    content: "";
+    background-color: var(--tertiary-color);
+    border-radius: .5rem;
+    border: 1px solid var(--primary-color-height);
+}
+
+@keyframes showMessage{
+    0%{
+        visibility: visible;
+        width: 100%;
+    }
+    100%{
+        visibility: hidden;
+        width: 0%;
+    }
+}

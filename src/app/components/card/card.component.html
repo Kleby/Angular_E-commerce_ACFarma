@@ -1,6 +1,6 @@
 @defer{
 
-<a [routerLink]="['/', paramUrl]" class="card__container">
+<a [routerLink]="['/product/', paramUrl]" class="card__container">
     <div class="card-image__content">
         <img [src]="productImgSrc()" alt="Remedio" class="product-img">
         <app-free-shipping class="app-free-shipping" />
@@ -10,14 +10,16 @@
             <h4 class="description-title">{{productDescription()}}</h4>
         </div>
         <div class="card__price">
-            <small class="price-before">{{productBeforePrice() | currency : 'BRL'}}</small>
-            <h3 class="price">{{productPrice() | currency : 'BRL'}}</h3>
+            @if(isSale()){
+                <small class="price-before">{{productBeforePrice() | currency : 'BRL'}}</small>
+            }
+            <h3 class="price-after">{{productPrice() | currency : 'BRL'}}</h3>
+            <small class="price-installments">em até 2x sem juros</small>
         </div>
         <div class="card__stars">
-
         </div>
     </div>
-    <app-button-buy class="app-btn-buy" />
+    <app-button-action class="app-btn-action" inputBtnActionTitle="Comprar" />
 </a>
 }@loading {
     <p>Carregando</p>

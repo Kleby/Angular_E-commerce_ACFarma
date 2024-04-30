@@ -2,14 +2,14 @@ import { Component, Input, OnInit, inject, signal } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
-import { ButtonBuyComponent } from '../button-buy/button-buy.component';
 import { FreeShippingComponent } from '../free-shipping/free-shipping.component';
 import { CommonModule } from '@angular/common';
+import { ButtonActionComponent } from '../button-action/button-action.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, ButtonBuyComponent, FreeShippingComponent, CommonModule],
+  imports: [FontAwesomeModule, RouterLink, ButtonActionComponent, FreeShippingComponent, CommonModule],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
@@ -17,7 +17,7 @@ export class CardComponent implements OnInit{
   faTruckFast = faTruckFast;
 
   paramUrl: number | null = null;
-  #route = inject(ActivatedRoute);
+  // #route = inject(ActivatedRoute);
 
   ngOnInit():void{    
     // console.log(this.#route.snapshot.params['name']);// primeira forma de regatar os paramentrs
@@ -34,6 +34,7 @@ export class CardComponent implements OnInit{
   public productBeforePrice = signal(0);
   public productPrice = signal(0);
   public productStars = signal(0);
+  
 
   @Input() set inputId(id: number){
     this.productId.set(id);
@@ -63,6 +64,16 @@ export class CardComponent implements OnInit{
 
   @Input() set inputStars(star: number){
     this.productStars.set(star);
+  }
+
+  public category = signal('');
+  @Input() set inputCategory(category: string){
+    this.category.set(category);
+  }
+
+  public isSale = signal(false);
+  @Input() set inputIsSale(isSale: boolean){
+    this.isSale.set(isSale);
   }
 
 }

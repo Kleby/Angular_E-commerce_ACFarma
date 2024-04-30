@@ -1,0 +1,13 @@
+<dialog class="message-delete">
+    <div class="message-delete__container">
+        <div class="message-delete__content">
+            <p>Deseja Deletar o item:
+                <span class="message-delete__title">
+                    {{itemTitle()}}
+                </span>
+            </p>
+            <button type="button" class="message-delete__btn" (click)="onDeleteMessage()">Sim</button>
+             <button type="button" (click)="onCloseMessage()" class="message-delete__close">X</button>
+        </div>
+    </div>
+</dialog>
