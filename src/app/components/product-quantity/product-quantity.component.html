@@ -1,0 +1,10 @@
+<div class="quantity__container">
+    @if (isShowText()) {
+        <span class="quantity-text">Quantidade</span>
+    }
+    <div class="quantity__content">
+        <button type="button" class="btn-quantity" (click)="onHandleDecrease()">-</button>
+        <span class="current-quantity">{{quantity()}}</span>
+        <button type="button" class="btn-quantity" (click)="onHandleIncrease()">+</button>
+    </div>
+</div>
