@@ -1,10 +1,5 @@
 
 --------------------------------------------------------------------------------
-Package: @angular/router
-License: "MIT"
-
-
---------------------------------------------------------------------------------
 Package: @angular/platform-browser
 License: "MIT"
 
@@ -242,12 +237,12 @@ License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: @angular/animations
+Package: @angular/router
 License: "MIT"
 
 
 --------------------------------------------------------------------------------
-Package: @angular/common
+Package: @angular/animations
 License: "MIT"
 
 
@@ -618,7 +613,7 @@ Awesome, nor vice versa. **Please do not use brand logos for any purpose except
 to represent the company, product, or service to which they refer.**
 
 --------------------------------------------------------------------------------
-Package: @angular/core
+Package: @angular/common
 License: "MIT"
 
 
@@ -845,6 +840,11 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
+--------------------------------------------------------------------------------
+Package: @angular/core
+License: "MIT"
+
+
 --------------------------------------------------------------------------------
 Package: zone.js
 License: "MIT"

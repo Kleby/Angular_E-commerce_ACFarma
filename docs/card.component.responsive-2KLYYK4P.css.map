@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/card/card.component.responsive.css"],
+  "sourcesContent": ["@media screen and (max-width: 678px){\r\n    .card__container{\r\n        background-color: var(--primary-color);\r\n        border-color:#8886;\r\n    }\r\n    .card__container > .app-btn-action{\r\n        visibility: visible;\r\n    }\r\n    \r\n}\r\n\r\n@media screen and (max-width: 458px) {\r\n    .card__container{\r\n        width: 100%;\r\n    }\r\n}\r\n"],
+  "mappings": "AAAA,OAAO,OAAO,IAAI,CAAC,SAAS,EAAE,OAC1B,CAAC,gBACG,iBAAkB,IAAI,iBACtB,aAAa,KACjB,CACA,CAJC,eAIgB,CAAE,CAAC,eAChB,WAAY,OAChB,CAEJ,CAEA,OAAO,OAAO,IAAI,CAAC,SAAS,EAAE,OAC1B,CAXC,gBAYG,MAAO,IACX,CACJ",
+  "names": []
+}
