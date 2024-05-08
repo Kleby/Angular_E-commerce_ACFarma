@@ -87,3 +87,19 @@ h3, p{
 .price-installments{
     color: var(--text-color);
 }
+
+@media screen and (max-width: 678px){
+    .card__container{
+        background-color: var(--primary-color);
+    }
+    .card__container > .app-btn-action{
+        visibility: visible;
+    }
+    
+}
+
+@media screen and (max-width: 458px) {
+    .card__container{
+        width: 100%;
+    }
+}

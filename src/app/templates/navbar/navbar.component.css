@@ -10,6 +10,10 @@
     display: none;
 }
 
+.chbox-menu{
+    display: none;
+}
+
 .navbar__menu{
     list-style: none;
     display: flex;

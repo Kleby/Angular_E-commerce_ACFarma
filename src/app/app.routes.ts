@@ -13,7 +13,7 @@ export const routes: Routes = [
         path: 'cart', component: CartComponent, title: 'Carrinho de compras'
     },
     {
-        path: 'product', component: HomeComponent, title: "Farmacia do Devedor - Home"
+        path: 'product', component: HomeComponent, title: "ACFarme - Home"
     },
     {
         path: `product/:id`, component: ProductComponent, title: 'Produtos '

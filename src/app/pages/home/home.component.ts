@@ -13,14 +13,13 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [CardComponent, FontAwesomeModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css', './home.component.responsive.css']
 })
   export class HomeComponent implements OnInit {
     searchIcon = faMagnifyingGlass;
-    category: string = '';
 
     searchProduct: string = "";
-
+    searchCategory: string = "";
     products: IPorduct[] = [];
 
     constructor(
@@ -30,13 +29,20 @@ import { ActivatedRoute } from '@angular/router';
       private route: ActivatedRoute
     ){}
 
-    ngOnInit(){
+    ngOnInit(): void{
       const products = this.productService.getAllProducts();
+
       this.route.queryParamMap.subscribe(params =>{
-        const description = params.get("description")?.toLocaleLowerCase();
-        if(description){          
-          this.products = products.filter( p => p.description.toLowerCase().includes(description));
+        const paramDescription = params.get("description")?.toLocaleLowerCase();
+        const paramCategory = params.get("category");
+        if(paramDescription){          
+          this.products = products.filter( p => p.description.toLowerCase().includes(paramDescription));
           return;
+        }
+        else if(paramCategory){          
+          this.products = products.filter( p => p.category.includes(paramCategory))
+          const radio = document.getElementById(paramCategory) as HTMLInputElement;
+          radio.checked = true;
         }
         
         this.getAllProducts();
@@ -53,15 +59,13 @@ import { ActivatedRoute } from '@angular/router';
 
     onSearchProduct(event: Event){
       const target = event.target as HTMLInputElement;
-      this.searchProduct = target.value;
-      
+      this.searchProduct = target.value;      
     }
-
-    setCategory(event: Event){
+    
+    onSearchCategory(event: Event){
       const target = event.target as HTMLInputElement;
-      this.category = target?.value;
-      console.log(this.category);
-       
+      this.searchCategory = target.value || "";  
+      target.form?.submit();      
     }
 
     productIsContains(productDescription : string){

@@ -6,7 +6,7 @@ import { IProductCart } from '../models/IProductCart.interface';
 })
 export class QuantityCartService {
   itens: IProductCart[] = [];
-  quantityInCart: number = 1;
+  quantityInCart: number = 0;
   constructor() {
     this.updatedQuantityInCart();
   }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, inject, signal } from '@angular/core';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
 import { FreeShippingComponent } from '../free-shipping/free-shipping.component';
@@ -11,7 +11,7 @@ import { ButtonActionComponent } from '../button-action/button-action.component'
   standalone: true,
   imports: [FontAwesomeModule, RouterLink, ButtonActionComponent, FreeShippingComponent, CommonModule],
   templateUrl: './card.component.html',
-  styleUrl: './card.component.css'
+  styleUrls: ['./card.component.css', './card.component.responsive.css']
 })
 export class CardComponent implements OnInit{
   faTruckFast = faTruckFast;

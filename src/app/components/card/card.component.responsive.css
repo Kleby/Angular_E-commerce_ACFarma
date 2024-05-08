@@ -1,0 +1,16 @@
+@media screen and (max-width: 678px){
+    .card__container{
+        background-color: var(--primary-color);
+        border-color:#8886;
+    }
+    .card__container > .app-btn-action{
+        visibility: visible;
+    }
+    
+}
+
+@media screen and (max-width: 458px) {
+    .card__container{
+        width: 100%;
+    }
+}

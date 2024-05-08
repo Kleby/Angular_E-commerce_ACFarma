@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CartComponent implements OnInit {
   products: IPorduct[] = [];
-  quantity: WritableSignal<number> = signal(1);
+  quantity: WritableSignal<number> = signal(0);
   priceTotal: WritableSignal<number> = signal(0);
 
   icons = {

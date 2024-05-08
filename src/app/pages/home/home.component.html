@@ -1,49 +1,50 @@
 <div class="home__container">
-    <section class="category__container" (change)="setCategory($event)">
-        <div class="category__group">
-            <input type="radio" name="category" class="category-radio" id="personalHygiene" value="personalHygiene">
-            <label class="category-text" for="personalHygiene">Higiene Pessoal</label>
-        </div>
-        <div class="category__group">
-            <input type="radio" name="category" class="category-radio" id="baby" value="baby">
-            <label class="category-text" for="baby">Bebê</label>
-        </div>
-        <div class="category__group">
-            <input type="radio" name="category" class="category-radio" id="health" value="health">
-            <label class="category-text" for="health">Saúde</label>
-        </div>
-    </section>
-    <section class="homer__search">
-        <form class="search__content">
-            <button type="submit" class="search-btn">
-                <fa-icon [icon]="searchIcon" class="search-icon">
+    <section class="home__search">
+        <form for="setCategory" class="category__container" (change)="onSearchCategory($event)">
+            <div class="category__group">
+                <input type="radio" name="category" class="category-radio" id="personalHygiene" value="personalHygiene">
+                <label class="category-text" for="personalHygiene">Higiene Pessoal</label>
+            </div>
+            <div class="category__group">
+                <input type="radio" name="category" class="category-radio" id="baby" value="baby">
+                <label class="category-text" for="baby">
+                    Bebê
+                </label>
+            </div>
+            <div class="category__group">
+                <input type="radio" name="category" class="category-radio" id="health" value="health">
+                <label class="category-text" for="health">Saúde</label>
+            </div>
+        </form>
+            <form class="search__content">
+                <button type="submit" class="search-btn">
+                    <fa-icon [icon]="searchIcon" class="search-icon">
                 </fa-icon>
             </button>
-            <input type="text" class="search-product" name="description" (input)="onSearchProduct($event)">
+            <input type="text" class="search-product" name="description">
             @if(!searchProduct){
-            <p class="text-placeholder"></p>
+                <p class="text-placeholder"></p>
             }
-        </form>
-
-    </section>
+        </form>    
+</section>
     <section class="home__cards">
         @for (product of products; track $index) {
-            @if(category){
-                @if( product.category === category){
-                    <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
-                    [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
-                    class="cards__card" />
-                }
-            }
-            @else {
-            <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
-                [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
-                class="cards__card" />
-            }
-            
-        }@empty {
+        <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
+            [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
+            class="cards__card" />
+        }
+        @empty {
         <h2>Nenhum produto encontrado</h2>
         }
+        <!-- @if(category){
+            @if( product.category === category){
+        }
+        @else {
+        <app-card [inputId]="product.id" [inputImgSrc]="product.imgProduct" [inputDescription]="product.description"
+            [inputBefore]="product.priceBefore" [inputPrice]="product.price" [inputIsSale]="product.isSale"
+            class="cards__card" />
+        }    
+    } -->
 
     </section>
 </div>

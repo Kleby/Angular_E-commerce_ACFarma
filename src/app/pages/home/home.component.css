@@ -7,112 +7,45 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: baseline;
-    gap: .75rem;
+    gap: 1.5rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 96%;
 }
 
-.cards__card{
-    /* background-color: var(--primary-color); */
+.home__search{
+    margin: .5rem 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    justify-content: center;
+    background-color: var(--primary-color);
 }
 
 .search__content{
-    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     /* margin: .5rem; */
 }
-.homer__search{
-    max-width: 80%;
-    background-color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    flex: 1;
-    width: 98%;
+
+.category__container,
+.category__group{
     display: flex;
     align-items: center;
     justify-content: center;
-    max-height: 42px;
-    /* padding-right: 2rem; */
-    border: 1px solid var(--hight-color);
-    align-self: center;
-    border-radius: 1rem;
-    position: relative;
-}
-.search-btn{
-    position: absolute;
-    left: 0;
-    height: 42px;
-    width: 42px;
-    border: none;
-    outline: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 400ms;
-}
-.search-btn:hover{
-    color: var(--secondary-color-hover);
-}
-
-.search-btn:hover ~ .search-product{
-    transition: 400ms;
-    box-shadow: 0 4px 5px var(--low-color);
-}
-
-.search-product{
-    max-width: 100%;
-    width: 100%;
-    padding: 0 2.25rem;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    height: 2rem;
-    border-radius: 1rem;
-    background-color: var(--primary-color);
-}
-
-.search-product:focus ~ .text-placeholder{
-    display: none;
-}
-
-.text-placeholder{
-    position: absolute;
-    color: var(--text-color);
-    margin-left: 2.25rem;
-    pointer-events: none;
-}
-
-.text-placeholder::before{
-    content: "";
-    animation: searchText 20s infinite;
-}
-
-.text-placeholder::after{
-    content: "";
-    height: 100%;
-    border-left: 1px solid var(--secondary-color);
-    position: absolute;
-    display: block;
-    top: 0;    
-    right: -2px;
-    animation: cursor 800ms infinite, writeText 20s steps(12) infinite;
-    background-color: var(--primary-color);
 }
 
 .category__container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    padding-bottom: .5rem;
+    padding: .5rem 0;
     background-color: var(--primary-color);
 }
 
 .category__group{
     margin: 0 .5rem;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .category-radio{
@@ -136,7 +69,6 @@
 .category-radio:hover{
     background-color: var(--secondary-dark);
 }
- 
 
 .category-text{
     user-select: none;
@@ -148,6 +80,80 @@
 .category-radio:checked + .category-text {
     color: #ff0606;
     transition: 600ms;
+}
+
+.search-btn,
+.search-product{
+    border: none;
+    outline: none;
+}
+
+.search-btn{
+    position: absolute;
+    left: 0;
+    height: 42px;
+    width: 42px;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: 400ms;
+}
+.search-btn::after{
+    content: "";
+    display: block;
+    height: 24px;
+    width: 1px;
+    background-color: var(--secondary-color-hover);
+    position: absolute;
+    top: 9px;
+    right: 8px;
+}
+
+.search-btn:hover{
+    color: var(--secondary-dark);
+}
+
+.search-btn:hover ~ .search-product{
+    transition: 400ms;
+    box-shadow: 0 4px 5px var(--low-color);
+}
+
+.search-product{
+    padding: 0 2.25rem;
+    font-size: 1rem;
+    height: 2rem;
+    border-radius: 1rem;
+    border: 1px solid var(--secondary-color-hover);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.search-product:focus ~ .text-placeholder{
+    display: none;
+}
+
+.text-placeholder{
+    position: absolute;
+    color: var(--primary-color);
+    margin-left: 2.25rem;
+    pointer-events: none;
+}
+
+.text-placeholder::before{
+    content: "";
+    animation: searchText 20s infinite;
+}
+
+.text-placeholder::after{
+    content: "";
+    height: 100%;
+    border-left: 1px solid var(--primary-color);
+    position: absolute;
+    display: block;
+    top: 0;    
+    right: -1px;
+    animation: cursor 800ms infinite, writeText 20s steps(12) infinite;
+    background-color: var(--secondary-color);
 }
 
 @keyframes writeText {
@@ -165,11 +171,11 @@
 
 @keyframes cursor {
     0% ,49%{
-        border-left: 1px solid var(--primary-color);
+        border-left: 1px solid var(--primary-color-low);
 
     }
     50%{
-        border-left: 1px solid var(--secondary-color);
+        border-left: 1px solid var(--primary-color);
     }
 }
 
@@ -189,5 +195,4 @@
     81%, 100%{
         content: "Aspirina";
     }
-
 }
