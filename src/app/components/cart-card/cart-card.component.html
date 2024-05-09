@@ -4,13 +4,16 @@
         <p class="cart-card__product-title">{{product()['description']}}
         </p>
     </div>
-    <div class="cart-card__itens">
-        <p class="cart-card__price"> {{product()['price'] | currency: 'BRL'}}</p>
+    <div class="cart-card__price-quantity">
+        <div class="cart-card__itens">
+            <p class="cart-card__price"> {{product()['price'] | currency: 'BRL'}}</p>
+        </div>
+        <div class="cart-card__itens">
+            <app-product-quantity (quantityOuput)="onToggleValue($event)" [inputId]="product()['id']"/>
+        </div>
+
     </div>
-    <div class="cart-card__itens">
-        <app-product-quantity (quantityOuput)="onToggleValue($event)" [inputId]="product()['id']"/>
-    </div>
-    <div>
+    <div class="btn-delete__content">
         <button 
             id="BtnDelete" 
             type="button" 
@@ -24,7 +27,8 @@
 </div>
 <i class="line"></i>
 
-@if (isOpenDialog) {
+
+@if (isOpenDialog || quantityIsZero) {
     <app-message-delete 
         [inputItemTitle]="product()['description']" 
         (closeMessage)="onCloseMessage($event)"

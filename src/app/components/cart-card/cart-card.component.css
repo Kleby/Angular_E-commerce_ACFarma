@@ -1,7 +1,7 @@
 .cart-card__container{
     width: 100%;
     display: grid;
-    grid-template-columns: 3fr repeat(3, 1fr); /*Isso poderia ser um mixer*/
+    grid-template-columns: 3fr repeat(2, 1fr); /*Isso poderia ser um mixer*/
     align-items: center;
     justify-items: center;
     gap: 1rem;
@@ -13,7 +13,7 @@
     width: 100%;
     height: .16rem;
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     margin: 1rem 0;
 }
 
@@ -23,6 +23,14 @@
     justify-content: center;
     width: 100%;
     height: 100%;
+}
+
+.cart-card__price-quantity{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 3rem;
 }
 
 .cart-card__itens p {
@@ -37,14 +45,16 @@
 
 .cart-card__img-title{
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: .5rem;
 }
 
 .cart-card__product-img{
     margin-left: .75rem;
-    width: 100px;
-    max-width: 100px;
+    width: 160px;
+    max-width: 160px;
     border: 1px solid var(--secondary-color);
     padding: .25rem;
     mix-blend-mode: multiply;

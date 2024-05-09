@@ -2,6 +2,8 @@
     .card__container{
         background-color: var(--primary-color);
         border-color:#8886;
+        max-width: 11.75rem;
+        width: 100%;
     }
     .card__container > .app-btn-action{
         visibility: visible;

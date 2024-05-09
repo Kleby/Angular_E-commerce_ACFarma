@@ -36,7 +36,7 @@ export class ProductQuantityComponent implements OnInit{
     this.quantityOuput.emit(this.quantity());
   }
   onHandleDecrease(): void {
-    if(this.quantity() > 1){
+    if(this.quantity() >= 1){
       this.quantity.update((oldValue:number) => --oldValue);
       this.quantityOuput.emit(this.quantity())
     }
@@ -44,6 +44,5 @@ export class ProductQuantityComponent implements OnInit{
   
   getQuantity(id: number):number{
     return this.productCartService.getQuantityProducts(id);
-    
   }
 }

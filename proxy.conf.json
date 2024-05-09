@@ -1,7 +1,0 @@
-{
-    "/api": {
-      "target": "https://kleby.github.io/",
-      "secure": false,
-      "changeOrigin": true
-    }
-  }

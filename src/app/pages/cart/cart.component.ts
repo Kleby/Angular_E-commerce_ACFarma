@@ -16,10 +16,11 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FontAwesomeModule, ButtonActionComponent, CartCardComponent, CommonModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css',
+  styleUrls: ['./cart.component.css', './cart.component.responsive.css'],
 })
 export class CartComponent implements OnInit {
   products: IPorduct[] = [];
+  
   quantity: WritableSignal<number> = signal(0);
   priceTotal: WritableSignal<number> = signal(0);
 

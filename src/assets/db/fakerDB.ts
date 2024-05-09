@@ -251,7 +251,7 @@ export const fakerDbProducts = [
     },
     {
         "id": 29,
-        "imgProduct": "./assets/images/Losartana_Potassica_Medley",
+        "imgProduct": "./assets/images/Losartana_Potassica_Medley.webp",
         "description": "Losartana Potássica Medley 50mg, caixa com 30 comprimidos revestidos",
         "quantityInStock": 88,
         "price": 2.78,

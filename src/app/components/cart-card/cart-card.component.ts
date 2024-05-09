@@ -28,7 +28,7 @@ import { MessageAddComponent } from '../message-add/message-add.component';
     MessageAddComponent,
   ],
   templateUrl: './cart-card.component.html',
-  styleUrl: './cart-card.component.css',
+  styleUrls: ['./cart-card.component.css', './cart-card.component.responsive.css'],
 })
 export class CartCardComponent implements OnInit {
   constructor(
@@ -38,6 +38,7 @@ export class CartCardComponent implements OnInit {
 
   isOpenDialog: boolean = false;
   isDeleteItem: boolean = false;
+  quantityIsZero: boolean = false; 
 
   @Output() onChangeDeleteEmit: EventEmitter<boolean> =
     new EventEmitter<boolean>();
@@ -68,6 +69,7 @@ export class CartCardComponent implements OnInit {
   onToggleValue(value: number) {
     this.updatedCart();
     this.quantityProductEmit.emit(value);
+    if(value === 0) this.quantityIsZero = true;
   }
 
   updatedCart() {
@@ -83,10 +85,12 @@ export class CartCardComponent implements OnInit {
     this.quantityCartService.deleteProductInCart(id);
     this.updatedCart();
     this.isOpenDialog = false;
+    this.quantityIsZero = false;
     this.onChangeDeleteEmit.emit(true);
   }
   onCloseMessage(isClose: boolean) {
     this.isOpenDialog = isClose;
+    this.quantityIsZero = isClose;
   }
 
 }

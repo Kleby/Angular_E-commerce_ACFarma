@@ -8,7 +8,6 @@
         align-items: center;
         justify-content: center;
         flex: 2;
-        z-index: 2;
     } 
     
     .navbar__menu-hamburger{
@@ -25,13 +24,48 @@
         padding: .5rem;
         transition: 400ms ease-in;
         background-color: var(--primary-color);
+        z-index: 2;
+    }
+    .hamburger-lines{
+        transition-duration: 400ms;
+        rotate: 360deg;
     }
     
+    .chbox-menu:checked ~ .navbar__menu-hamburger > .hamburger-lines{
+        width: 42px;
+        position: absolute;
+    }
+    .chbox-menu:checked ~ .navbar__menu-hamburger > .hamburger-lines:nth-child(2){
+        width: 0;
+    }
+    
+    .chbox-menu:checked ~ .navbar__menu-hamburger > .hamburger-lines:first-child{
+        rotate: 45deg;
+    }
+    
+    .chbox-menu:checked ~ .navbar__menu-hamburger > .hamburger-lines:last-child{
+        rotate: 135deg;
+    }
+
     .chbox-menu:checked + .navbar__menu-hamburger{
-        right: 10.75rem;
+        right: 11.15rem;
         flex: 2;
     }
 
+    .chbox-menu:checked ~ .bg-focus{
+        display: block;
+        height: 100vh;
+        width: 100vw;
+        background-color: #0008;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    .bg-focus{
+        transition: background-color 400ms ease;
+    }
     
     .hamburger-lines{
         content: "";
