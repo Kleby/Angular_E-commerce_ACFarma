@@ -20,11 +20,11 @@
         <li class="menu-item">
             <a routerLink="/cart" routerLinkActive="actived" class="menu-link">
                 <div class="bag__content">
-                <span class="quantity-bag" id="quantityInBag">0</span>
+                <span class="quantity-bag" id="quantityInBag">{{quantityInBag()}}</span>
                     <fa-icon class="bag-shopping" [icon]="faBasketShopping">
                     </fa-icon>
                 </div>
-                <span class="bag-price" id="bagPriceTotal"></span>
+                <span class="bag-price" id="bagPriceTotal">R$ {{bagPrice() | currency:"BRL"}}</span>
             </a>
         </li>
         <li class="menu-item">

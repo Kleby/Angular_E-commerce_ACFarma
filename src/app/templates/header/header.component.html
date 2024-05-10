@@ -3,6 +3,9 @@
         <a routerLink="/product" class="header__brand">
             <img src="./assets/brand/android-chrome-512x512.png" alt="logo da ACFarma" class="brand">
         </a>
-        <app-navbar class="header__navbar" />
+        <app-navbar 
+            [inputQuantityInBag]="totalQuantity" class="header__navbar" 
+            [inputBagPrice]="totalPriceInCart"
+        />
     </div>
 </header>

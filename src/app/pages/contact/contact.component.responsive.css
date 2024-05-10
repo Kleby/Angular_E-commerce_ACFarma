@@ -1,0 +1,8 @@
+@media screen and (max-width: 678px) {
+    .contact__content{
+        flex-direction: column;
+    }
+    .contact__form{
+        margin: 0 ;
+    }
+}

@@ -3,6 +3,9 @@ import {
   signal,
   WritableSignal,
   ChangeDetectionStrategy,
+  Input,
+  OnChanges,
+  SimpleChanges,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -20,9 +23,21 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css', './navbar.responsive.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnChanges{
   faBasketShopping: IconDefinition = faBasketShopping;
+  
+  public bagPrice: WritableSignal<number> = signal(0);
+  @Input() set inputBagPrice(price: number){
+    this.bagPrice.set(price);
+  }
+  
+  public quantityInBag: WritableSignal<number> = signal(0);
+  @Input() set inputQuantityInBag(quantity: number){
+    this.quantityInBag.set(quantity);
+  }
 
-  // public bagPrice: WritableSignal<number> = signal(0);
-  // public quantityInBag = signal(0);
+  ngOnChanges(changes: SimpleChanges): void {
+    this.bagPrice.update((oldPrice: number) => oldPrice);
+    this.quantityInBag.update((oldQuantity: number) => oldQuantity);
+  }
 }

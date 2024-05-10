@@ -59,7 +59,7 @@ export class ProductCartService {
       priceTotal += (i.price * i.quantityProducts);      
     } 
     this.setPriceTotal(priceTotal) 
-    document.getElementById('bagPriceTotal')!.innerHTML = "R$"+this.priceTotal.toFixed(2);     
+    // document.getElementById('bagPriceTotal')!.innerHTML = "R$"+this.priceTotal.toFixed(2);     
   }
   
   setPriceTotal(newPrice:number):void{

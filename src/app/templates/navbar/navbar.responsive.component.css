@@ -21,6 +21,7 @@
         height: 46px;
         width: 46px;
         border: 1px solid #8888;
+        border-radius: .5rem;
         padding: .5rem;
         transition: 400ms ease-in;
         background-color: var(--primary-color);

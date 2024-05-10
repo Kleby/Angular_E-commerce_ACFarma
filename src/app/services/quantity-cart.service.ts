@@ -24,7 +24,7 @@ export class QuantityCartService {
       quantityInCart += item.quantityProducts;      
     });
     this.setTotalInCart(quantityInCart);
-    document.getElementById('quantityInBag')!.innerHTML = `${this.quantityInCart}`;           
+    // document.getElementById('quantityInBag')!.innerHTML = `${this.quantityInCart}`;           
   }
   
   setTotalInCart(value: number): void {
