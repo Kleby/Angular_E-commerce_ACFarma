@@ -23,14 +23,14 @@ export class QuantityCartService {
     this.itens.map((item) => {
       quantityInCart += item.quantityProducts;      
     });
-    this.setTotalInCart(quantityInCart);
+    this.setTotalInCart(quantityInCart);    
     // document.getElementById('quantityInBag')!.innerHTML = `${this.quantityInCart}`;           
   }
   
   setTotalInCart(value: number): void {
     this.quantityInCart = value;
   }
-  getTotalInCart(): number {
+  getTotalInCart(): number {   
     return this.quantityInCart;
   }
 

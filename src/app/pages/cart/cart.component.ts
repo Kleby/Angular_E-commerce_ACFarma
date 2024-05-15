@@ -1,4 +1,4 @@
-import { Component, OnInit, WritableSignal, signal } from '@angular/core';
+import { Component, EventEmitter, OnInit, WritableSignal, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
   faBasketShopping,
@@ -50,18 +50,16 @@ export class CartComponent implements OnInit {
   getQuantity(value: number, id: number) {
     this.productCartService.setQuantityProductsById(id, value);
     this.quantityCartService.updatedQuantityInCart();
-    this.quantity.update((oldValue:number) => oldValue = this.quantityCartService.getTotalInCart());
+    this.quantity.update(() => this.quantityCartService.getTotalInCart());
     this.updatedPriceTotal();
   }
   
   updatedPriceTotal(){
-    this.priceTotal.update(oldValue => oldValue = this.productCartService.getPriceTotal())
+    this.priceTotal.update(() => this.productCartService.getPriceTotal())
     this.productCartService.updatedPriceTotal();    
   }
 
   updatedQuantityTotal(){
-    this.quantity.update((oldValue:number) => oldValue = this.quantityCartService.getTotalInCart())
+    this.quantity.update(() => this.quantityCartService.getTotalInCart())
   }
-  
-
 }

@@ -1,11 +1,7 @@
 import {
   Component,
-  signal,
-  WritableSignal,
   ChangeDetectionStrategy,
-  Input,
-  OnChanges,
-  SimpleChanges,
+  OnInit,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -14,6 +10,8 @@ import {
   faBasketShopping,
 } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
+import { QuantityCartService } from '../../services/quantity-cart.service';
+import { ProductCartService } from '../../services/product-cart.service';
 
 @Component({
   selector: 'app-navbar',
@@ -23,21 +21,20 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./navbar.component.css', './navbar.responsive.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class NavbarComponent implements OnChanges{
+export class NavbarComponent implements OnInit{
   faBasketShopping: IconDefinition = faBasketShopping;
-  
-  public bagPrice: WritableSignal<number> = signal(0);
-  @Input() set inputBagPrice(price: number){
-    this.bagPrice.set(price);
-  }
-  
-  public quantityInBag: WritableSignal<number> = signal(0);
-  @Input() set inputQuantityInBag(quantity: number){
-    this.quantityInBag.set(quantity);
+
+  totalPriceInBag: number = 0;
+  totalQuantityInBag: number = 0;
+    
+  constructor(
+    private quantityCartService:QuantityCartService,
+    private productCartService: ProductCartService
+  ){}
+
+  ngOnInit(): void{
+      this.totalPriceInBag = this.productCartService.getPriceTotal();
+      this.totalQuantityInBag = this.quantityCartService.getTotalInCart();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    this.bagPrice.update((oldPrice: number) => oldPrice);
-    this.quantityInBag.update((oldQuantity: number) => oldQuantity);
-  }
 }
