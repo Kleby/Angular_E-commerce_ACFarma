@@ -1,0 +1,31 @@
+.footer__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 4.5rem;
+    color: var(--secondary-dark);
+    padding: 1rem ;
+}
+
+.footer__title{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+.footer__heilight{
+    color: var(--secondary-color);
+}
+
+.footer__line{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 4px;
+    border-radius: .25rem;
+    background-color: #fff;
+}
+
+.footer__dev{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
