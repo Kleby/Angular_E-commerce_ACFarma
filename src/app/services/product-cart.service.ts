@@ -59,11 +59,12 @@ export class ProductCartService {
       priceTotal += (i.price * i.quantityProducts);      
     } 
     this.setPriceTotal(priceTotal) 
-    // document.getElementById('bagPriceTotal')!.innerHTML = "R$"+this.priceTotal.toFixed(2);     
   }
   
   setPriceTotal(newPrice:number):void{
     this.priceTotal = newPrice;
+    const priceInNav = document.getElementById("bagPriceTotal");
+    if(priceInNav) priceInNav.innerText = `R$ ${newPrice.toFixed(2)}`;
   }
 
   getPriceTotal():number{ 

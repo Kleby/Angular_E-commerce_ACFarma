@@ -17,19 +17,24 @@ export class QuantityCartService {
       console.log("não há itens no carrinho");
       return;
     }
-
+    
     this.itens = JSON.parse(cartItems);
     let quantityInCart = 0;
     this.itens.map((item) => {
       quantityInCart += item.quantityProducts;      
     });
     this.setTotalInCart(quantityInCart);    
-    // document.getElementById('quantityInBag')!.innerHTML = `${this.quantityInCart}`;           
   }
   
   setTotalInCart(value: number): void {
     this.quantityInCart = value;
+   
+    const quantityInNav = document.getElementById("quantityInBag");
+    if( quantityInNav ) {
+      quantityInNav.innerText = value.toString();
+    }
   }
+
   getTotalInCart(): number {   
     return this.quantityInCart;
   }
