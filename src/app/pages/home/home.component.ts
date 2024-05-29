@@ -7,6 +7,7 @@ import { ProductCartService } from '../../services/product-cart.service';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ActivatedRoute } from '@angular/router';
+import { CardLoadingComponent } from '../../components/card-loading/card-loading.component';
 
 @Component({
   selector: 'app-home',

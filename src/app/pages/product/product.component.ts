@@ -46,6 +46,8 @@ export class ProductComponent implements OnInit {
   productForm!: FormGroup;
   showMessage: boolean = false;
 
+  QuantityInCart!: number;
+
   constructor(
     private route: ActivatedRoute,
     private produtoService: ProductService,
@@ -73,7 +75,7 @@ export class ProductComponent implements OnInit {
   }
 
   onToggleValue(value:number){
-      // console.log(value);
+    this.QuantityInCart = value ? value : 0; 
     
   }
 
@@ -84,7 +86,7 @@ export class ProductComponent implements OnInit {
   addToCart(){
     const product = {
       ...this.produto!,
-      quantityProducts: this.productCartService.getQuantityProducts(this.produto!.id)
+      quantityProducts: this.QuantityInCart
     }        
     this.productCartService?.setProductCart(product);
     this.updatedProductInCart();
@@ -95,7 +97,7 @@ export class ProductComponent implements OnInit {
     this.showMessage = isShowMessage;
   }
 
-  updatedProductInCart(){
+  updatedProductInCart(){ 
     this.quantityCartService.updatedQuantityInCart();
     this.productCartService.updatedPriceTotal();
   }

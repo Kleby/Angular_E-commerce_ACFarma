@@ -5,11 +5,19 @@ import { faTruckFast } from '@fortawesome/free-solid-svg-icons';
 import { FreeShippingComponent } from '../free-shipping/free-shipping.component';
 import { CommonModule } from '@angular/common';
 import { ButtonActionComponent } from '../button-action/button-action.component';
+import { CardLoadingComponent } from '../card-loading/card-loading.component';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [FontAwesomeModule, RouterLink, ButtonActionComponent, FreeShippingComponent, CommonModule],
+  imports: [
+    FontAwesomeModule, 
+    RouterLink, 
+    ButtonActionComponent, 
+    FreeShippingComponent, 
+    CommonModule,
+    CardLoadingComponent
+  ],
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css', './card.component.responsive.css']
 })

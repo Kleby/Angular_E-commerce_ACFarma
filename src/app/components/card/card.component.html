@@ -2,7 +2,7 @@
 
 <a [routerLink]="['/product/', paramUrl]" class="card__container">
     <div class="card-image__content">
-        <img [src]="productImgSrc()" alt="Remedio" class="product-img">
+        <img [src]="productImgSrc()" alt="{{productDescription()}}" title="{{productDescription()}}" class="product-img">
         <app-free-shipping class="app-free-shipping" />
     </div>
     <div class="card__content">
@@ -22,5 +22,6 @@
     <app-button-action class="app-btn-action" inputBtnActionTitle="Comprar" />
 </a>
 }@loading {
-    <p>Carregando</p>
+    <app-card-loading  style="align-self: flex-start;"/>
+
 }

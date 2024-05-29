@@ -13,18 +13,21 @@
             <a 
                 routerLink="/product" routerLinkActive="actived" 
                 [routerLinkActiveOptions]="{exact:true}" 
-                class="menu-link">Produtos
+                class="menu-link"
+                title="Products"
+                >
+                Produtos
             </a>
         </li>
         <i class="separator"></i>
         <li class="menu-item">
-            <a routerLink="/cart" routerLinkActive="actived" class="menu-link">
+            <a routerLink="/cart" routerLinkActive="actived" class="menu-link" title="cart">
                 <div class="bag__content">
                 <span class="quantity-bag" id="quantityInBag">{{totalQuantityInBag}}</span>
                     <fa-icon class="bag-shopping" [icon]="faBasketShopping">
                     </fa-icon>
                 </div>
-                <span class="bag-price" id="bagPriceTotal"></span>
+                <span class="bag-price" id="bagPriceTotal"> R$ 0,00</span>
             </a>
         </li>
         <li class="menu-item">
@@ -32,6 +35,7 @@
                 routerLink="/contact"  
                 class="menu-link"
                 routerLinkActive="actived"
+                title="Contact"
             >
                 Contato   
             </a>

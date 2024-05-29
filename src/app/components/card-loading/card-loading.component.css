@@ -1,0 +1,104 @@
+.card-loading__container{
+    min-height: 27rem;
+    max-width: 98%;
+    /* width: 11.75rem; */
+    display: flex;
+    flex-direction: column;
+    padding: .25rem .5rem 1rem;
+    border: 1px solid transparent;
+    border-radius: .5rem;
+    background-color: var(--primary-color);
+    gap: .25rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-loading__placeholder-header,
+.card-loading__placeholder-body{
+    padding: .25rem;
+    gap: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-header__image,
+.placeholder-header__text,
+.placeholder-body__description,
+.placeholder-body__price,
+.placeholder-footer{
+    content: "";
+    display: block;
+    border-radius: .25rem;
+}
+
+.placeholder-header__image{
+    width: 10.25rem;
+    height: 8.75rem;
+    background-color: var(--primary-111);
+}
+
+.placeholder-header__text{
+    height: 2.25rem;
+    width: 9rem;
+    background-color: var(--primary-000);
+}
+
+.placeholder-body__description{
+    width: 10rem;
+    height: 5rem;
+    background-color: var(--primary-001);
+}
+
+.placeholder-body__price{
+    width: 5.25rem;
+    height: 2rem;
+    background-color: var(--primary-000);
+    align-self: flex-start;
+}
+
+.placeholder-footer{
+    width: 10rem;
+    height: 3rem;
+    background-color: var(--primary-000);
+    margin-top: 2.5rem;
+}
+
+.placeholder-effect{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    /* left: -32px; */
+    background-color: #b4b4b4af;
+    animation: effectLight 400ms infinite alternate;
+    background-color: #dfdfdf59;
+    
+}
+
+.placeholder-effect::after{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    box-shadow: 0 0 12px 2px #f1f1f1;
+    background-color: #ebebeb;
+    width: 12px;
+}
+
+
+@keyframes effectLight {
+    0%{
+        left: -128px;
+    }
+
+    100%{
+        left: 182px;
+    }
+}

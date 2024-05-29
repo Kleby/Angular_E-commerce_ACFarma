@@ -94,6 +94,7 @@
     
     .navbar__show-menu:has(.chbox-menu:checked) + .navbar__menu{
         right: 0;
+        z-index: 999;
     }
     .separator{
         display: none;

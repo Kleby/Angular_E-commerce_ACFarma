@@ -29,3 +29,20 @@
     color: var(--secondary-color);
     font-weight: 600;
 }
+
+@media screen and (max-width: 368px) {
+
+    .footer__container{
+        flex-direction: column;
+        height: auto;
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .footer__line{
+        height: 4px;
+        width: 100%;
+    }
+
+    
+}

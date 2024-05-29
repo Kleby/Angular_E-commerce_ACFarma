@@ -64,7 +64,10 @@ export class ProductCartService {
   setPriceTotal(newPrice:number):void{
     this.priceTotal = newPrice;
     const priceInNav = document.getElementById("bagPriceTotal");
+    
     if(priceInNav) priceInNav.innerText = `R$ ${newPrice.toFixed(2)}`;
+    
+    
   }
 
   getPriceTotal():number{ 
